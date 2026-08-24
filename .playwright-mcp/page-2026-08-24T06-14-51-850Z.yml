@@ -1,0 +1,289 @@
+- generic [ref=e2]:
+  - generic [ref=e11]:
+    - heading "Runtime" [level=3] [ref=e16]
+    - generic [ref=e18]:
+      - paragraph [ref=e22]: Groq API key
+      - generic [ref=e24]:
+        - textbox "Groq API key" [ref=e25]:
+          - /placeholder: ""
+        - button "Show password" [ref=e27] [cursor=pointer]:
+          - generic [ref=e28]: visibility
+    - generic [ref=e31]:
+      - paragraph [ref=e35]: Tavily API key
+      - generic [ref=e37]:
+        - textbox "Tavily API key" [ref=e38]:
+          - /placeholder: ""
+        - button "Show password" [ref=e40] [cursor=pointer]:
+          - generic [ref=e41]: visibility
+    - generic [ref=e47]:
+      - generic [ref=e48]: Groq
+      - generic [ref=e49]: Ready
+    - generic [ref=e54]:
+      - generic [ref=e55]: Tavily
+      - generic [ref=e56]: Ready
+    - separator [ref=e61]
+    - heading "Demo Controls" [level=3] [ref=e66]
+    - button [ref=e69] [cursor=pointer]:
+      - paragraph [ref=e74]: Load sample brief
+    - button [ref=e77] [cursor=pointer]:
+      - paragraph [ref=e82]: Refresh agent clients
+    - separator [ref=e87]
+    - heading "Agents" [level=3] [ref=e92]
+    - paragraph [ref=e97]: VenueAgent
+    - paragraph [ref=e102]: CateringAgent
+    - paragraph [ref=e107]: PhotographyAgent
+    - paragraph [ref=e112]: BudgetAgent
+    - paragraph [ref=e117]: DesignAgent
+    - paragraph [ref=e122]: TimelineAgent
+    - paragraph [ref=e127]: TravelAgent
+    - paragraph [ref=e132]: GuestAgent
+    - separator [ref=e137]
+    - heading "Saved Runs" [level=3] [ref=e142]
+    - paragraph [ref=e147]: No runs yet.
+  - generic [ref=e3]:
+    - banner [ref=e150]:
+      - generic [ref=e153]:
+        - generic [ref=e538]:
+          - img "Running..." [ref=e539]
+          - button "Stop" [ref=e545] [cursor=pointer]
+        - button "Deploy" [ref=e155] [cursor=pointer]
+    - generic [ref=e158]:
+      - generic [ref=e163]:
+        - generic [ref=e164]:
+          - generic [ref=e165]: LangChain portfolio project
+          - heading "Multi-Agent Wedding Planner" [level=1] [ref=e167]:
+            - text: Multi-Agent Wedding Planner
+            - generic [ref=e168]:
+              - link "Link to heading":
+                - /url: "#multi-agent-wedding-planner"
+          - paragraph [ref=e169]: Build a client-ready planning brief from preferences, constraints, market research, and 8 agent-synthesized recommendations.
+        - generic [ref=e170]:
+          - generic [ref=e171]: 9-agent flow
+          - generic [ref=e172]: Venue research
+          - generic [ref=e173]: Budget optimization
+          - generic [ref=e174]: Timeline planning
+          - generic [ref=e175]: Design direction
+      - generic [ref=e180]:
+        - generic [ref=e181]:
+          - generic [ref=e182]: Runtime
+          - generic [ref=e183]: Ready
+          - generic [ref=e184]: Planner can run live
+        - generic [ref=e185]:
+          - generic [ref=e186]: Event Date
+          - generic [ref=e187]: 240 days out
+          - generic [ref=e188]: Apr 21, 2027
+        - generic [ref=e189]:
+          - generic [ref=e190]: Budget
+          - generic [ref=e191]: USD 35k - 65k
+          - generic [ref=e192]: 417 per guest
+        - generic [ref=e193]:
+          - generic [ref=e194]: Planning Focus
+          - generic [ref=e195]: Venue shortlist, Vendor research +2
+          - generic [ref=e196]: 120 guests
+      - generic [ref=e198]:
+        - generic [ref=e200]:
+          - generic [ref=e201]: Wedding Brief
+          - generic [ref=e208]:
+            - generic [ref=e209]: Basics
+            - generic [ref=e215]:
+              - paragraph [ref=e219]: Couple or project name
+              - textbox "Couple or project name" [ref=e222]:
+                - /placeholder: ""
+                - text: Amira and Noah
+            - generic [ref=e224]:
+              - generic [ref=e226]:
+                - generic [ref=e228]:
+                  - paragraph [ref=e232]: Location
+                  - textbox "Location" [ref=e235]:
+                    - /placeholder: ""
+                    - text: Chicago, Illinois
+                - generic [ref=e237]:
+                  - paragraph [ref=e241]: Guest count
+                  - generic [ref=e243]:
+                    - spinbutton "Guest count" [ref=e244]: "120"
+                    - generic [ref=e245]:
+                      - button "Decrement" [ref=e246] [cursor=pointer]
+                      - button "Increment" [ref=e249] [cursor=pointer]
+              - generic [ref=e253]:
+                - generic [ref=e255]:
+                  - paragraph [ref=e259]: Target date
+                  - generic [ref=e262]:
+                    - group "Target date" [ref=e264]:
+                      - spinbutton "year, Target date" [ref=e265]: "2027"
+                      - generic [ref=e266]: /
+                      - spinbutton "month, Target date" [ref=e267]: "04"
+                      - generic [ref=e268]: /
+                      - spinbutton "day, Target date" [ref=e269]: "21"
+                    - textbox [ref=e271]: 2027-04-21
+                - generic [ref=e273]:
+                  - paragraph [ref=e277]: Event scope
+                  - group [ref=e279]:
+                    - combobox "Event scope" [ref=e280]: Ceremony and reception
+                    - button "Open" [ref=e281] [cursor=pointer]
+            - generic [ref=e285]: Budget and Direction
+            - generic [ref=e291]:
+              - generic [ref=e293]:
+                - generic [ref=e295]:
+                  - paragraph [ref=e299]: Currency
+                  - group [ref=e301]:
+                    - combobox "Currency" [ref=e302]: USD
+                    - button "Open" [ref=e303] [cursor=pointer]
+                - generic [ref=e309]:
+                  - paragraph [ref=e313]: Budget range
+                  - group "Budget range" [ref=e314]:
+                    - generic [ref=e315]:
+                      - generic [ref=e316]:
+                        - slider "Budget range — start Budget range" [ref=e318]: "35000"
+                        - generic:
+                          - generic:
+                            - paragraph: "35000"
+                      - generic [ref=e319]:
+                        - slider "Budget range — end Budget range" [ref=e321]: "65000"
+                        - generic:
+                          - generic:
+                            - paragraph: "65000"
+                      - generic:
+                        - generic:
+                          - paragraph: "5000"
+                        - generic:
+                          - paragraph: "250000"
+              - generic [ref=e323]:
+                - generic [ref=e325]:
+                  - paragraph [ref=e329]: Planner tone
+                  - group [ref=e331]:
+                    - combobox "Planner tone" [ref=e332]: Elegant and practical
+                    - button "Open" [ref=e333] [cursor=pointer]
+                - generic [ref=e338]:
+                  - paragraph [ref=e342]: Style direction
+                  - group [ref=e344]:
+                    - generic [ref=e345]:
+                      - group "Selected values" [ref=e346]:
+                        - generic "Modern" [ref=e347]:
+                          - button "Remove Modern" [ref=e349] [cursor=pointer]
+                        - generic "Romantic" [ref=e352]:
+                          - button "Remove Romantic" [ref=e354] [cursor=pointer]
+                        - generic "Cultural fusion" [ref=e357]:
+                          - button "Remove Cultural fusion" [ref=e359] [cursor=pointer]
+                      - combobox "Style direction" [ref=e362]
+                    - button "Clear all" [ref=e363] [cursor=pointer]
+                    - button "Open" [ref=e367] [cursor=pointer]
+            - generic [ref=e371]: Priorities and Guardrails
+            - generic [ref=e377]:
+              - paragraph [ref=e381]: Planning priorities
+              - group [ref=e383]:
+                - generic [ref=e384]:
+                  - group "Selected values" [ref=e385]:
+                    - generic "Venue shortlist" [ref=e386]:
+                      - button "Remove Venue shortlist" [ref=e388] [cursor=pointer]
+                    - generic "Vendor research" [ref=e391]:
+                      - button "Remove Vendor research" [ref=e393] [cursor=pointer]
+                    - generic "Budget allocation" [ref=e396]:
+                      - button "Remove Budget allocation" [ref=e398] [cursor=pointer]
+                    - generic "Timeline" [ref=e401]:
+                      - button "Remove Timeline" [ref=e403] [cursor=pointer]
+                  - combobox "Planning priorities" [ref=e406]
+                - button "Clear all" [ref=e407] [cursor=pointer]
+                - button "Open" [ref=e411] [cursor=pointer]
+            - generic [ref=e416]:
+              - generic [ref=e418]:
+                - generic [ref=e420]:
+                  - paragraph [ref=e424]: Must-haves
+                  - textbox "Must-haves" [ref=e426]:
+                    - /placeholder: ""
+                    - text: Indoor-outdoor venue, strong vegetarian menu, live acoustic music, smooth guest transportation, and a photography-forward schedule.
+                - generic [ref=e428]:
+                  - paragraph [ref=e432]: Traditions and family details
+                  - textbox "Traditions and family details" [ref=e434]:
+                    - /placeholder: ""
+                    - text: Blend a short western ceremony with a family tea ceremony. Include space for speeches from both families.
+              - generic [ref=e438]:
+                - paragraph [ref=e442]: Constraints
+                - textbox "Constraints" [ref=e444]:
+                  - /placeholder: ""
+                  - text: Avoid venues more than 45 minutes from downtown. Keep the design elevated without relying on heavy floral spend.
+            - button [active] [ref=e448] [cursor=pointer]:
+              - paragraph [ref=e453]: Generate wedding plan
+        - generic [ref=e455]:
+          - generic [ref=e460]:
+            - heading "Planning Lens" [level=3] [ref=e462]:
+              - text: Planning Lens
+              - generic [ref=e463]:
+                - link "Link to heading":
+                  - /url: "#planning-lens"
+            - generic [ref=e464]:
+              - generic [ref=e465]:
+                - generic [ref=e466]: Couple
+                - strong [ref=e467]: Amira and Noah
+              - generic [ref=e468]:
+                - generic [ref=e469]: Location
+                - strong [ref=e470]: Chicago, Illinois
+              - generic [ref=e471]:
+                - generic [ref=e472]: Scope
+                - strong [ref=e473]: Ceremony and reception
+              - generic [ref=e474]:
+                - generic [ref=e475]: Pace
+                - strong [ref=e476]: 240 days out
+            - paragraph [ref=e477]: Style direction
+            - generic [ref=e478]:
+              - generic [ref=e479]: Modern
+              - generic [ref=e480]: Romantic
+              - generic [ref=e481]: Cultural fusion
+            - paragraph [ref=e482]: Planning priorities
+            - generic [ref=e483]:
+              - generic [ref=e484]: Venue shortlist
+              - generic [ref=e485]: Vendor research
+              - generic [ref=e486]: Budget allocation
+              - generic [ref=e487]: Timeline
+          - generic [ref=e492]:
+            - heading "Agent Flow" [level=3] [ref=e494]:
+              - text: Agent Flow
+              - generic [ref=e495]:
+                - link "Link to heading":
+                  - /url: "#agent-flow"
+            - generic [ref=e496]:
+              - strong [ref=e497]: MainWeddingPlannerAgent
+              - generic [ref=e498]: Coordinates all 8 agents and synthesizes the final plan.
+            - generic [ref=e499]:
+              - strong [ref=e500]: VenueAgent
+              - generic [ref=e501]: Researches venues, pricing, availability, and reviews.
+            - generic [ref=e502]:
+              - strong [ref=e503]: CateringAgent
+              - generic [ref=e504]: Finds caterers, plans menus, handles dietary restrictions.
+            - generic [ref=e505]:
+              - strong [ref=e506]: PhotographyAgent
+              - generic [ref=e507]: Finds photographers, matches styles, compares packages.
+            - generic [ref=e508]:
+              - strong [ref=e509]: BudgetAgent
+              - generic [ref=e510]: Optimizes budget allocation and finds cost savings.
+            - generic [ref=e511]:
+              - strong [ref=e512]: DesignAgent
+              - generic [ref=e513]: Creates color palettes, floral plans, decor inspiration.
+            - generic [ref=e514]:
+              - strong [ref=e515]: TimelineAgent
+              - generic [ref=e516]: Creates planning timelines and tracks vendor deadlines.
+            - generic [ref=e517]:
+              - strong [ref=e518]: TravelAgent
+              - generic [ref=e519]: Plans accommodations, transportation, and destination logistics.
+            - generic [ref=e520]:
+              - strong [ref=e521]: GuestAgent
+              - generic [ref=e522]: Manages RSVPs, seating charts, and dietary requirements.
+            - generic [ref=e523]:
+              - strong [ref=e524]: qwen/qwen3.6-27b
+              - generic [ref=e525]: Powers all agent reasoning and synthesis.
+      - group [ref=e548]:
+        - paragraph [ref=e555] [cursor=pointer]: Running 9-agent wedding planner
+        - generic [ref=e557]:
+          - paragraph [ref=e562]: Preparing the main planner prompt.
+          - paragraph [ref=e567]: Loading 8 specialized agents...
+          - paragraph [ref=e572]: VenueAgent researching venues...
+          - paragraph [ref=e577]: CateringAgent finding caterers and planning menus...
+          - paragraph [ref=e582]: PhotographyAgent finding photographers...
+          - paragraph [ref=e587]: BudgetAgent optimizing budget allocation...
+          - paragraph [ref=e592]: DesignAgent creating design direction...
+          - paragraph [ref=e597]: TimelineAgent creating planning timeline...
+          - paragraph [ref=e602]: TravelAgent planning accommodations and logistics...
+          - paragraph [ref=e607]: GuestAgent managing RSVPs and seating...
+          - paragraph [ref=e612]: MainWeddingPlannerAgent synthesizing all research...
+      - generic [ref=e535]:
+        - strong [ref=e536]: No plan generated yet
+        - text: Complete the brief and run the planner to create a client-ready wedding plan.

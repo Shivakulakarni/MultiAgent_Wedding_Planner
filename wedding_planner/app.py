@@ -9,8 +9,6 @@ from typing import Any
 
 import streamlit as st
 from dotenv import load_dotenv
-from langchain.agents import create_agent
-from langchain.messages import HumanMessage
 
 from wedding_planner.prompts import USER_PROMPT_FOR_MAIN_AGENT, WEDDING_PLANNER_AGENT_PROMPT
 
@@ -326,10 +324,9 @@ def render_sidebar() -> bool:
 
 
 @st.cache_resource(show_spinner=False)
-def load_agent_dependencies():
-    from wedding_planner.agents.registry import ALL_DELEGATION_TOOLS
-    from wedding_planner.models import groq_model
-    return groq_model, ALL_DELEGATION_TOOLS
+def load_pipeline():
+    from wedding_planner.pipeline import invoke_pipeline
+    return invoke_pipeline
 
 
 def build_requirements(payload: dict[str, Any]) -> str:
@@ -410,14 +407,11 @@ def render_brief_form(runtime_ready: bool) -> bool:
         return st.form_submit_button("Generate wedding plan", type="primary", use_container_width=True, disabled=not runtime_ready)
 
 
-def invoke_planner(requirements: str) -> tuple[str, float]:
-    started = time.perf_counter()
-    groq_model, delegation_tools = load_agent_dependencies()
-    system_prompt = WEDDING_PLANNER_AGENT_PROMPT.format(requirements=requirements)
-    main_agent = create_agent(model=groq_model, tools=delegation_tools, name="MainWeddingPlannerAgent", system_prompt=system_prompt)
-    response = main_agent.invoke({"messages": [HumanMessage(content=USER_PROMPT_FOR_MAIN_AGENT)]})
-    content = response["messages"][-1].content
-    return content, time.perf_counter() - started
+def invoke_planner(requirements: str, progress_callback=None) -> tuple[str, float]:
+    """Run the parallel pipeline and return (plan_text, elapsed_seconds)."""
+    invoke_pipeline = load_pipeline()
+    result = invoke_pipeline(requirements, progress_callback=progress_callback)
+    return result.plan, result.total_latency_seconds
 
 
 def create_download_name(title: str) -> str:
@@ -516,20 +510,21 @@ def handle_submission() -> None:
     payload = get_form_payload()
     requirements = build_requirements(payload)
     title = payload["couple_name"].strip() or "Wedding plan"
+
+    domain_status: dict[str, str] = {}
+
+    def progress_callback(domain: str, state: str, message: str) -> None:
+        domain_status[domain] = message
+
     with st.status("Running 9-agent wedding planner", expanded=True) as status:
-        st.write("Preparing the main planner prompt.")
-        st.write("Loading 8 specialized agents...")
         try:
-            st.write("VenueAgent researching venues...")
-            st.write("CateringAgent finding caterers and planning menus...")
-            st.write("PhotographyAgent finding photographers...")
-            st.write("BudgetAgent optimizing budget allocation...")
-            st.write("DesignAgent creating design direction...")
-            st.write("TimelineAgent creating planning timeline...")
-            st.write("TravelAgent planning accommodations and logistics...")
-            st.write("GuestAgent managing RSVPs and seating...")
-            st.write("MainWeddingPlannerAgent synthesizing all research...")
-            content, duration = invoke_planner(requirements)
+            st.write("Preparing the parallel pipeline...")
+            st.write("Launching 8 domain research tasks in parallel...")
+            content, duration = invoke_planner(requirements, progress_callback=progress_callback)
+            for domain, msg in domain_status.items():
+                if domain != "pipeline":
+                    st.write(msg)
+            st.write(domain_status.get("pipeline", "Plan ready"))
         except Exception as exc:
             status.update(label="Planner run failed", state="error")
             st.error("The planner could not complete the run. Check API keys, quotas, and Tavily access.")

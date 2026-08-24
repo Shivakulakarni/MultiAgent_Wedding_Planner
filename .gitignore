@@ -5,3 +5,7 @@ __pycache__/
 guide.md
 .streamlit
 tests/__pycache__/
+.playwright-mcp/
+*.egg-info/
+tests/st_err.txt
+tests/st_out.txt

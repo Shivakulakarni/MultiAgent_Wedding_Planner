@@ -3,4 +3,4 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-groq_model = init_chat_model("llama-3.3-70b-versatile", model_provider="groq")
+groq_model = init_chat_model("qwen/qwen3.6-27b", model_provider="groq")

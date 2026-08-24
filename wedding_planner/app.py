@@ -16,7 +16,7 @@ from wedding_planner.prompts import USER_PROMPT_FOR_MAIN_AGENT, WEDDING_PLANNER_
 
 
 APP_TITLE = "Multi-Agent Wedding Planner"
-MODEL_NAME = "llama-3.3-70b-versatile"
+MODEL_NAME = "qwen/qwen3.6-27b"
 REQUIRED_KEYS = ("GROQ_API_KEY", "TAVILY_API_KEY")
 
 STYLE_OPTIONS = [
